@@ -27,12 +27,14 @@
         maxTopPos, minTopPos,
         defaults = {
 			scrollArea      : w,
-            duration        : 200,
+            duration        : 0,
             lockBottom      : true,
             delay           : 0,
-            easing          : 'linear',
+            easing          : false,
             stickToBottom   : false,
-            cssTransition   : false
+            cssTransition   : true,
+            startOffset : 0,
+            offsetY : 0 
         },
         // detect CSS transitions support
         supportsTransitions = (function() {

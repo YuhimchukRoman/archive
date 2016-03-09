@@ -205,8 +205,8 @@ require_once('library/bootstrap.php');
 /*********************** PUT YOU FUNCTIONS BELOW ********************************/
 
  add_image_size( 'main_banner', 1170, 550, array('center','center'));
- add_image_size( 'year_img', 230, 165, array('center','center'));
-
+ add_image_size( 'year_img', 230, 165, false);
+ add_image_size( 'health_care', 514, 640, array('center','center'));
 function js_str($s)
 {
     return '"' . addcslashes($s, "\0..\37\"\\") . '"';

@@ -46,7 +46,9 @@
 		<div class="container">	
 		<div class="apl-menu-btn">
 							<span>
-							Stäng
+							<?php if (get_field('menu_button_hidden')):
+								the_field('menu_button_hidden');
+								endif;?>
 							</span>
 							<img src="<?php echo get_template_directory_uri();?>/images/x.png" alt="">
 						</div>
@@ -90,6 +92,7 @@
 							<img src="<?php echo get_template_directory_uri();?>/images/arrow.png" alt="">
 							</a>
 						<?php endif;?>
+						<?php do_action('wpml_add_language_selector'); ?>
 						<div class="apl-menu-btn">
 							<span>
 							<?php if (get_field('menu_button_text')):
@@ -97,6 +100,7 @@
 								endif;?>
 							</span>
 							<img src="<?php echo get_template_directory_uri();?>/images/bars.svg" alt="">
+							
 						</div>
 					</div>
 				</div><!--END of row -->

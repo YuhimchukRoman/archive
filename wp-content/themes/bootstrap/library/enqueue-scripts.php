@@ -17,7 +17,7 @@ if ( ! function_exists( 'bootstrap_scripts' ) ) :
 
 	// Enqueue the main Stylesheet.
 	wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '0.0.1', 'all' );
-
+	wp_enqueue_style( 'google fonts', "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin-ext" );
 	// Deregister the jquery version bundled with WordPress.
 	wp_deregister_script( 'jquery' );
 

@@ -27,11 +27,11 @@
 			}
 		});
 
-		$('.apl-healthcare-counter span').counterUp({
+		$('.apl-healthcare-counter-number').counterUp({
 		    delay: 10,
 		    time: 1500
 		});
-		$('.apl-life-counter span').counterUp({
+		$('.apl-life-counter-number').counterUp({
 		    delay: 10,
 		    time: 1500
 		});

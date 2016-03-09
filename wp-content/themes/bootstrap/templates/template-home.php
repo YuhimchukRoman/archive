@@ -367,8 +367,12 @@ if( !empty($image) ):
 							<img src="<?php the_sub_field('icon')?>" alt=''>
 							<div class="apl-healthcare-counter">
 								<?php if(get_sub_field('counter')) :?>
-								<span id="health<?php echo $i;?>"><?php the_sub_field('counter')?></span>
+								<span id="health<?php echo $i;?>" class="apl-healthcare-counter-number"><?php the_sub_field('counter')?></span> 
 								<?php endif;
+								if(get_sub_field('counter_index')) :?>
+								<span><?php the_sub_field('counter_index')?></span>
+								<?php
+								endif; 
 								if(get_sub_field('subheading')) :?>
 								<p><?php the_sub_field('subheading')?></p>
 								<?php endif;?>
@@ -383,7 +387,20 @@ if( !empty($image) ):
 				 </div>
 			</div>
 			<div class="col-md-6 col-sm-6 apl-healthcare-bigphoto">
-				<img src="<?php the_field('healthcare_photo')?>" alt=''>
+			<?php 
+				if(get_field('healthcare_photo')):
+					$image = get_field('healthcare_photo');
+					if( !empty($image) ): 
+						// vars
+						$url = $image['url'];
+						// thumbnail
+						$size = 'health_care';
+						$thumb = $image['sizes'][ $size ];
+						$width = $image['sizes'][ $size . '-width' ];
+						$height = $image['sizes'][ $size . '-height' ];?>
+							<img src="<?php echo $thumb; ?>" alt="" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+					<?php endif; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
@@ -392,7 +409,20 @@ if( !empty($image) ):
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-sm-6 apl-life-bigphoto">
-				<img src="<?php the_field('life_photo')?>" alt=''>
+			<?php 
+				if(get_field('life_photo')):
+					$image = get_field('life_photo');
+					if( !empty($image) ): 
+						// vars
+						$url = $image['url'];
+						// thumbnail
+						$size = 'health_care';
+						$thumb = $image['sizes'][ $size ];
+						$width = $image['sizes'][ $size . '-width' ];
+						$height = $image['sizes'][ $size . '-height' ];?>
+							<img src="<?php echo $thumb; ?>" alt="" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+					<?php endif; ?>
+				<?php endif; ?>
 			</div>
 			<div class="col-md-6 col-sm-6">
 				<div class="apl-life-content">
@@ -421,8 +451,12 @@ if( !empty($image) ):
 							<img src="<?php the_sub_field('icon')?>" alt=''>
 							<div class="apl-life-counter">
 								<?php if(get_sub_field('counter')) :?>
-								<span><?php the_sub_field('counter')?></span>
+								<span class="apl-life-counter-number"><?php the_sub_field('counter')?></span>
 								<?php endif;
+								if(get_sub_field('counter_index')) :?>
+								<span ><?php the_sub_field('counter_index')?></span>
+								<?php
+								endif; 
 								if(get_sub_field('subheading')) :?>
 								<p><?php the_sub_field('subheading');?></p>
 								<?php endif;?>
@@ -477,7 +511,7 @@ if( !empty($image) ):
 							endwhile;
 							$rand = rand();
 							?>
-								<canvas id="myChart_<?php echo $rand?>" width="250" height="187"></canvas>
+								<canvas id="myChart_<?php echo $rand?>" width="300" height="187"></canvas>
 								<script type="text/javascript">
 									$( document ).ready(function() {
 									   var data = {
@@ -528,7 +562,7 @@ if( !empty($image) ):
 							endwhile;
 							$rand = rand();
 							?>
-								<canvas id="myChart_<?php echo $rand?>" width="250" height="187"></canvas>
+								<canvas id="myChart_<?php echo $rand?>" width="300" height="187"></canvas>
 								<script type="text/javascript">
 									$( document ).ready(function() {
 									   var data = {
