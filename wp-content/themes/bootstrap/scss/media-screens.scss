@@ -1,0 +1,170 @@
+@import "inc/vars";
+@import 'bootstrap-settings';
+/*-=Small screens=-*/
+    @media (max-width: $screen-sm) {
+        /* TOP BAR Mobile STYLING */
+        .top-bar {
+            height: auto;
+            background-color: #CCC; /* change background color if you need */
+        }
+        .top-bar-section {
+            ul{
+                li{
+                    > a{
+                        color: white; /* change color of text if you need */
+                        font-size: 13px;
+                        background-color: #333333; /* change background color if you need */
+                    }
+                    &:hover > a{ background: #111 !important; /* change background color if you need */ }
+
+                    &.current-menu-item > a:not(.button),
+                    &.current-page-ancestor > a:not(.button) {
+                        background-color: #777 !important;/* change background color of current menu item if you need */
+                    }
+                }
+            }
+            .menu{display: none;}
+            .dropdown{
+                clip:auto;
+                height: auto;
+                display: none;
+                width: 100%;
+                position: static !important;
+                > li a{
+                    padding-left: 30px;
+                }
+            }
+            .has-dropdown>a:after{display: none;}
+            ul li.has-dropdown a.dropdown-toggle{
+                display: block;
+                position: absolute;
+                width: 50px;
+                height: 44px;
+                right: 0;
+                top: 0;
+                color: #fff;
+                z-index: 100;
+                text-align: center;
+                i.fa{
+                    font-size: 13px;
+                    line-height: 1;
+                    height: 13px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+            }
+        }
+        .top-bar.expanded {
+            .opnd > .dropdown-toggle i.fa {
+                transform: rotate(90deg);
+            }
+            .title-area {
+                background-color: #111;
+            }
+            .toggle-topbar {
+                a {
+                    color: #fff;
+
+                    span {
+                        box-shadow:none !important;
+
+                        &:after {
+                            box-shadow: 0 0 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+    } /* max-width 640px and lower. Use this for mobiles only */
+
+/*-=Medium screens=-*/
+    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+        /* TOP BAR STYLING */
+        .top-bar { background-color: transparent; }
+        .top-bar-section {
+            ul { background: transparent; }
+            ul li { background-color: transparent; }
+
+
+            li:not(.has-form),
+            li.has-dropdown {
+                > a:not(.button) {
+                    /* Regular menu item style */
+                    color: black;
+                    background-color: transparent;
+                    padding: 0 15px;
+                    &:hover {
+                        color: red;
+                        background: grey;
+                    }
+                    &:after { display: none; }
+                }
+            }
+
+
+            li.current-menu-item > a:not(.button),
+            li.current-page-ancestor > a:not(.button) {
+                /* Style of Current page and Ancestor page */
+                color: grey;
+                background-color: orange;
+            }
+            // .has-dropdown {
+            //     > a { padding: 0 !important; //make padding equal to your general links }
+            //     > a:after { display: none; }
+            // }
+
+            /* Dropdown Styling*/
+
+            ul li:hover:not(.has-form) > a {
+                /* Parent link style on dropdown hover */
+                background-color: green;
+                color: black;
+            }
+
+            .dropdown li:not(.has-form):not(.active)>a:not(.button) {
+                /* Regular link in dropdown */
+                color: white;
+                background-color: olive;
+            }
+
+            .dropdown li:not(.has-form):not(.active):hover > a:not(.button) {
+                /* Dropdown link on hover */
+                color: grey;
+                background-color: bisque;
+            }
+
+            .has-dropdown > .dropdown li .dropdrown_menu li{
+
+                a {/* Dropdown in dropdown */ background-color: blue; }
+                &:hover a{
+                    color: white;
+                    text-decoration: underline;
+                    background-color: red;
+                }
+            }
+        }
+        /* Align Menu to the right
+            .top-bar-section { float:right; } */
+        /* Align Menu to the center
+            .top-bar-section { float:none; text-align: center; }
+            .top-bar-section ul{display: inline-block;} */
+
+        .has-dropdown .dropdown-toggle{display: none;}
+
+    }  /* min-width 768px */
+
+    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+		 /* min-width 768px and max-width 992px, use when QAing tablet-only issues */
+    }
+
+/*-=Large screens=-*/
+    @media (min-width: $screen-lg) {
+		 /* min-width 1200px, large screens */
+    }
+
+
